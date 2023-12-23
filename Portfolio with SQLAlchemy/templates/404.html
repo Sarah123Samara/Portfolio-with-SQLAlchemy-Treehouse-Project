@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>404 Not Found</title>
+</head>
+
+<body>
+    <section id="not-found">
+        <img src="https://media.giphy.com/media/DvyLQztQwmyAM/giphy.gif" alt="Suprised dog GIF">
+        <h2>Oops! It looks like this page is on holiday.</h2>
+        <p>404 Not Found: The requested URL was not found on the server. If you entered the URL manually, please check your spelling and try again.</p>
+        <a href="{{ url_for('homepage') }}">
+            <button><i class=" fas fa-home"></i> Go Home</button>
+        </a>
+    </section>
+</body>
+
+</html>

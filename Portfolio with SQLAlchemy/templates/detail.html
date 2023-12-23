@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <section class="header">
+        <h1>{{ project.title }}</h1>
+        <p>{{ project.date }}</p>
+        <a href="{{ project.github_link }}" target="_blank" class="github-btn">
+            <i class="fab fa-github"></i>
+            View on GitHub
+        </a>
+        <h2>Skills Used in This Project</h2>
+        <ul class="project-skills" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+            {% set skills = project.skills.split(',') %}
+            {% for skill in skills %}
+                <li>{{ skill.strip() }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section id="project-desc">
+        <div id="triangle5"></div>
+        <h2>Description</h2>
+        <p style="text-align: center;">{{ project.description }}</p>
+        <div id="triangle6"></div>
+    </section>
+    <section id="edit-delete">
+        <a href="{{ url_for('edit_project', id=project.id) }}">
+            <i class="fas fa-edit"></i>
+            Edit
+        </a>
+        <a href="{{ url_for('delete_project', id=project.id) }}" onclick="return confirm('Are you sure you want to delete this project?');">
+            <i class="far fa-trash-alt"></i>
+            Delete
+        </a>
+    </section>
+{% endblock %}
